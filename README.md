@@ -12,7 +12,8 @@ NextFlix is an **end-to-end content-based movie recommendation system** that **s
 **Live Web App:** [https://dpm24800-nextflix.streamlit.app/](https://dpm24800-nextflix.streamlit.app/)
 
 ## Video Demo
-<video src="demo/nextflix-demo.mp4" controls></video>
+
+<!-- <video src="demo/nextflix-demo.mp4" controls></video> -->
 
 <a href="https://youtu.be/L9iB59upObg" target="_blank">
   <img src="https://img.youtube.com/vi/L9iB59upObg/maxresdefault.jpg" alt="Watch the video" style="width:100%; max-width:800px;">
