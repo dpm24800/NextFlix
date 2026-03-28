@@ -12,11 +12,11 @@ venv/
 .venv
 
 # Artifacts (large files — optional to commit)
-artifacts/*.pkl
-artifacts/*.csv
+# artifacts/*.pkl
+# artifacts/*.csv
 
 # Logs
-logs/
+# logs/
 
 # Jupyter
 .ipynb_checkpoints/
