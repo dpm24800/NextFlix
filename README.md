@@ -7,6 +7,19 @@
 
 NextFlix is an **end-to-end content-based movie recommendation system** that **suggests your next movie instantly**, built for the Aakash Group AI/ML Internship Task. It uses **TF-IDF vectorization** and **cosine similarity** on movie plot descriptions from the IMDB Genres dataset to recommend similar movies.
 
+## Deployment
+
+**Live Web App:** [https://dpm24800-nextflix.streamlit.app/](https://dpm24800-nextflix.streamlit.app/)
+
+## Video Demo
+<video src="demo/nextflix-demo.mp4" controls></video>
+
+<a href="https://youtu.be/L9iB59upObg" target="_blank">
+  <img src="https://img.youtube.com/vi/L9iB59upObg/maxresdefault.jpg" alt="Watch the video" style="width:100%; max-width:800px;">
+</a>
+
+<!-- [![Watch the video](https://img.youtube.com/vi/L9iB59upObg/0.jpg)](https://www.youtube.com/watch?v=L9iB59upObg) -->
+
 ## Preview
 > Run `python train.py` then <br>
 `streamlit run app.py` and take a screenshot here.
