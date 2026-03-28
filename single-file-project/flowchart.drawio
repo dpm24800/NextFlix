@@ -1,0 +1,76 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Page-1" id="G-g1yFMdh3w9FGpnhZ88">
+    <mxGraphModel dx="1028" dy="595" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-43" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5c842;strokeColor=#000000;fontColor=#000000;fontStyle=1" value="START: trainer.py" vertex="1">
+          <mxGeometry height="60" width="120" x="340" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-44" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#15151e;strokeColor=#f5c842;fontColor=#e8e0d4" value="Data Ingestion:&#xa;Load &#39;jquigl/imdb-genres&#39;&#xa;from Hugging Face" vertex="1">
+          <mxGeometry height="60" width="160" x="320" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-45" edge="1" parent="1" source="OjoOzFLh1Qiw_JqXX1y1-43" target="OjoOzFLh1Qiw_JqXX1y1-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-46" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#15151e;strokeColor=#f5c842;fontColor=#e8e0d4" value="Data Transformation:&#xa;Clean Text (Lemmatize,&#xa;Stopwords, Regex)" vertex="1">
+          <mxGeometry height="60" width="160" x="320" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-47" edge="1" parent="1" source="OjoOzFLh1Qiw_JqXX1y1-44" target="OjoOzFLh1Qiw_JqXX1y1-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-48" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#15151e;strokeColor=#f5c842;fontColor=#e8e0d4" value="TF-IDF Vectorization:&#xa;Bigrams, 20k Features" vertex="1">
+          <mxGeometry height="60" width="160" x="320" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-49" edge="1" parent="1" source="OjoOzFLh1Qiw_JqXX1y1-46" target="OjoOzFLh1Qiw_JqXX1y1-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-50" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e8834a;strokeColor=#000000;fontColor=#000000" value="Save Model Artifacts:&#xa;recommender_model.pkl" vertex="1">
+          <mxGeometry height="60" width="180" x="310" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-51" edge="1" parent="1" source="OjoOzFLh1Qiw_JqXX1y1-48" target="OjoOzFLh1Qiw_JqXX1y1-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-52" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5c842;strokeColor=#000000;fontColor=#000000;fontStyle=1" value="RUN: app.py&#xa;(Streamlit)" vertex="1">
+          <mxGeometry height="60" width="120" x="340" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-53" edge="1" parent="1" source="OjoOzFLh1Qiw_JqXX1y1-50" target="OjoOzFLh1Qiw_JqXX1y1-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-54" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#15151e;strokeColor=#f5c842;fontColor=#e8e0d4" value="Does pkl file exist?" vertex="1">
+          <mxGeometry height="80" width="140" x="330" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-55" edge="1" parent="1" source="OjoOzFLh1Qiw_JqXX1y1-52" target="OjoOzFLh1Qiw_JqXX1y1-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-56" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c0392b;strokeColor=#000000;fontColor=#ffffff" value="Display Error:&#xa;Run trainer.py first" vertex="1">
+          <mxGeometry height="60" width="120" x="520" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-57" edge="1" parent="1" source="OjoOzFLh1Qiw_JqXX1y1-54" target="OjoOzFLh1Qiw_JqXX1y1-56">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint value="-10" as="offset" />
+            <mxPoint x="470" y="630" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-58" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#15151e;strokeColor=#f5c842;fontColor=#e8e0d4" value="Select Search Mode" vertex="1">
+          <mxGeometry height="80" width="140" x="330" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-59" edge="1" parent="1" source="OjoOzFLh1Qiw_JqXX1y1-54" target="OjoOzFLh1Qiw_JqXX1y1-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-60" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#15151e;strokeColor=#f5c842;fontColor=#e8e0d4" value="By Title:&#xa;Cosine Similarity&#xa;(Target Movie vs All)" vertex="1">
+          <mxGeometry height="60" width="140" x="130" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-61" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#15151e;strokeColor=#f5c842;fontColor=#e8e0d4" value="By Description:&#xa;Vectorize Query&#xa;+ Cosine Similarity" vertex="1">
+          <mxGeometry height="60" width="140" x="330" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-62" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#15151e;strokeColor=#f5c842;fontColor=#e8e0d4" value="By Genre:&#xa;Filter + Sort&#xa;by Rating" vertex="1">
+          <mxGeometry height="60" width="140" x="530" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="OjoOzFLh1Qiw_JqXX1y1-63" parent="1" style="shape=display;whiteSpace=wrap;html=1;fillColor=#f5c842;strokeColor=#000000;fontColor=#000000;fontStyle=1" value="Render Movie Cards&#xa;&amp; Score Charts" vertex="1">
+          <mxGeometry height="60" width="160" x="320" y="940" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

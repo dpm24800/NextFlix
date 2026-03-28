@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environments
+venv/
+.env
+.venv
+
+# Artifacts (large files — optional to commit)
+artifacts/*.pkl
+artifacts/*.csv
+
+# Logs
+logs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
