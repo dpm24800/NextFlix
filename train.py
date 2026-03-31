@@ -1,7 +1,7 @@
 """
 train.py
 ─────────────────────────────────────────────────────────
-Entry point for training the CineMatch recommendation model.
+Entry point for training the NextFlix recommendation model.
 
 Usage:
     python train.py
@@ -26,7 +26,7 @@ from src.pipeline.train_pipeline import TrainPipeline
 
 if __name__ == "__main__":
     print("=" * 55)
-    print("  CineMatch — Movie Recommendation System")
+    print("  NextFlix — Movie Recommendation System")
     print("  Starting training pipeline…")
     print("=" * 55)
 

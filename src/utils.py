@@ -7,7 +7,7 @@ from src.exception import CustomException
 
 
 def save_object(file_path: str, obj) -> None:
-    """Serialize any Python object to disk using pickle."""
+    # Serialize any Python object to disk using pickle
     try:
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, "wb") as f:
@@ -18,7 +18,7 @@ def save_object(file_path: str, obj) -> None:
 
 
 def load_object(file_path: str):
-    """Deserialize a pickled object from disk."""
+    # Deserialize a pickled object from disk
     try:
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"Artifact not found: {file_path}")
@@ -31,7 +31,7 @@ def load_object(file_path: str):
 
 
 def artifacts_exist(paths: list) -> bool:
-    """Return True only if every path in the list exists."""
+    # Return True only if every path in the list exists."""
     return all(os.path.exists(p) for p in paths)
 
 

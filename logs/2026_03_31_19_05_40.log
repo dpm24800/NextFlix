@@ -1,0 +1,89 @@
+[2026-03-31 19:05:41,169] 161 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[2026-03-31 19:05:44,011] 112 datasets - INFO - TensorFlow version 2.20.0 available.
+[2026-03-31 19:05:50,781] 24 nextflix - INFO - =======================================================
+[2026-03-31 19:05:50,781] 25 nextflix - INFO -   TRAIN PIPELINE: START
+[2026-03-31 19:05:50,781] 26 nextflix - INFO - =======================================================
+[2026-03-31 19:05:50,781] 29 nextflix - INFO - Step 1: Data Ingestion
+[2026-03-31 19:05:50,781] 38 nextflix - INFO - DataIngestion: starting
+[2026-03-31 19:05:50,781] 40 nextflix - INFO - Fetching dataset: jquigl/imdb-genres
+[2026-03-31 19:06:22,208] 46 nextflix - INFO - Raw columns : ['movie title - year', 'genre', 'expanded-genres', 'rating', 'description']
+[2026-03-31 19:06:22,209] 47 nextflix - INFO - Train shape : (238256, 5)
+[2026-03-31 19:06:22,209] 48 nextflix - INFO - Val   shape : (29809, 5)
+[2026-03-31 19:06:22,229] 56 nextflix - INFO - Normalised columns: ['title', 'genre', 'expanded-genres', 'ratings', 'description']
+[2026-03-31 19:06:23,397] 64 nextflix - INFO - Saved train \u2192 artifacts\raw_train.csv
+[2026-03-31 19:06:23,397] 65 nextflix - INFO - Saved val   \u2192 artifacts\raw_val.csv
+[2026-03-31 19:06:23,397] 66 nextflix - INFO - DataIngestion: complete
+[2026-03-31 19:06:23,467] 34 nextflix - INFO - Step 2: Data Transformation
+[2026-03-31 19:06:23,467] 83 nextflix - INFO - DataTransformation: starting
+[2026-03-31 19:06:24,503] 86 nextflix - INFO - Loaded raw data  : (238256, 5)
+[2026-03-31 19:06:24,504] 87 nextflix - INFO - Columns found    : ['title', 'genre', 'expanded-genres', 'ratings', 'description']
+[2026-03-31 19:06:24,590] 103 nextflix - INFO - Dropped 0 rows with null description
+[2026-03-31 19:06:24,934] 112 nextflix - INFO - Dropped 76475 duplicate rows — 161,781 unique movies remain
+[2026-03-31 19:06:24,935] 115 nextflix - INFO - Cleaning description text…
+[2026-03-31 19:06:43,874] 118 nextflix - INFO - After cleaning: 161,777 movies retained
+[2026-03-31 19:06:43,874] 121 nextflix - INFO - Fitting TF-IDF vectorizer…
+[2026-03-31 19:06:57,197] 129 nextflix - INFO - TF-IDF matrix shape : (161777, 20000)
+[2026-03-31 19:06:57,197] 131 nextflix - INFO - Matrix sparsity     : 99.91%
+[2026-03-31 19:06:57,386] 15 nextflix - INFO - Object saved \u2192 artifacts\processed_movies.pkl
+[2026-03-31 19:06:57,568] 15 nextflix - INFO - Object saved \u2192 artifacts\tfidf_vectorizer.pkl
+[2026-03-31 19:06:57,599] 15 nextflix - INFO - Object saved \u2192 artifacts\tfidf_matrix.pkl
+[2026-03-31 19:06:57,599] 138 nextflix - INFO - DataTransformation: complete
+[2026-03-31 19:06:57,599] 39 nextflix - INFO - Step 3: Model Training & Evaluation
+[2026-03-31 19:06:57,599] 241 nextflix - INFO - ModelTrainer: starting
+[2026-03-31 19:06:57,806] 246 nextflix - INFO - Evaluating model…
+[2026-03-31 19:06:57,836] 105 nextflix - INFO - Matched 'Merchandise - nan' \u2192 'merchandise - nan'
+[2026-03-31 19:06:57,982] 105 nextflix - INFO - Matched 'Planzet - 2010' \u2192 'planzet - 2010'
+[2026-03-31 19:06:58,117] 105 nextflix - INFO - Matched 'A Song in the Shell - nan' \u2192 'a song in the shell - nan'
+[2026-03-31 19:06:58,300] 105 nextflix - INFO - Matched 'The Frog Prince - 1986' \u2192 'the frog prince - 1986'
+[2026-03-31 19:06:58,454] 105 nextflix - INFO - Matched 'Operation Wolves - 2019' \u2192 'operation wolves - 2019'
+[2026-03-31 19:06:58,602] 105 nextflix - INFO - Matched 'Native Son - 1986' \u2192 'native son - 1986'
+[2026-03-31 19:06:58,721] 105 nextflix - INFO - Matched 'Alive Alone - nan' \u2192 'alive alone - nan'
+[2026-03-31 19:06:58,936] 105 nextflix - INFO - Matched 'Lua Trung Tuyên - 1961' \u2192 'lua trung tuyên - 1961'
+[2026-03-31 19:06:59,102] 105 nextflix - INFO - Matched 'Twisted - 2022' \u2192 'twisted - 2022'
+[2026-03-31 19:06:59,253] 105 nextflix - INFO - Matched 'KostyaNika. Vremya leta - 2006' \u2192 'kostyanika. vremya leta - 2006'
+[2026-03-31 19:06:59,413] 105 nextflix - INFO - Matched 'Godfrey - nan' \u2192 'godfrey - nan'
+[2026-03-31 19:06:59,596] 105 nextflix - INFO - Matched 'Lui - 2021' \u2192 'lui - 2021'
+[2026-03-31 19:06:59,758] 105 nextflix - INFO - Matched 'Trhauma - 1980' \u2192 'trhauma - 1980'
+[2026-03-31 19:06:59,932] 105 nextflix - INFO - Matched 'Beyond Remedy - 2009' \u2192 'beyond remedy - 2009'
+[2026-03-31 19:07:00,152] 105 nextflix - INFO - Matched 'Four Girls in White - 1939' \u2192 'four girls in white - 1939'
+[2026-03-31 19:07:00,333] 105 nextflix - INFO - Matched 'Bond and Holmes: Antiheroines - 2020' \u2192 'bond and holmes: antiheroines - 2020'
+[2026-03-31 19:07:00,494] 105 nextflix - INFO - Matched 'Jake and the Giants - 2015' \u2192 'jake and the giants - 2015'
+[2026-03-31 19:07:00,657] 105 nextflix - INFO - Matched 'The Shopsoiled Girl - 1915' \u2192 'the shopsoiled girl - 1915'
+[2026-03-31 19:07:00,809] 105 nextflix - INFO - Matched 'Sand in My Sandwich - nan' \u2192 'sand in my sandwich - nan'
+[2026-03-31 19:07:00,971] 105 nextflix - INFO - Matched 'The Art of Passion - 2022' \u2192 'the art of passion - 2022'
+[2026-03-31 19:07:01,126] 105 nextflix - INFO - Matched 'La mille et deuxième nuit - 1933' \u2192 'la mille et deuxième nuit - 1933'
+[2026-03-31 19:07:01,246] 105 nextflix - INFO - Matched 'The Witch and the Ottoman - 2021' \u2192 'the witch and the ottoman - 2021'
+[2026-03-31 19:07:01,369] 105 nextflix - INFO - Matched 'The Cupboard Was Bare - 1948' \u2192 'the cupboard was bare - 1948'
+[2026-03-31 19:07:01,549] 105 nextflix - INFO - Matched 'Good Morning Babylon - 1987' \u2192 'good morning babylon - 1987'
+[2026-03-31 19:07:01,679] 105 nextflix - INFO - Matched 'Dolly Dearest - 1991' \u2192 'dolly dearest - 1991'
+[2026-03-31 19:07:01,811] 105 nextflix - INFO - Matched 'The Swordsman - 1990' \u2192 'the swordsman - 1990'
+[2026-03-31 19:07:01,950] 105 nextflix - INFO - Matched 'Tiki Bar Pirates - nan' \u2192 'tiki bar pirates - nan'
+[2026-03-31 19:07:02,104] 105 nextflix - INFO - Matched 'Sadness and Joy in the Life of Giraffes - 2019' \u2192 'sadness and joy in the life of giraffes - 2019'
+[2026-03-31 19:07:02,244] 105 nextflix - INFO - Matched 'Lazar - 2015' \u2192 'lazar - 2015'
+[2026-03-31 19:07:02,390] 105 nextflix - INFO - Matched 'Gorgones kai mages - 1968' \u2192 'gorgones kai mages - 1968'
+[2026-03-31 19:07:02,516] 105 nextflix - INFO - Matched 'Nostrum - 2010' \u2192 'nostrum - 2010'
+[2026-03-31 19:07:02,710] 105 nextflix - INFO - Matched 'Simha - 2010' \u2192 'simha - 2010'
+[2026-03-31 19:07:02,857] 105 nextflix - INFO - Matched 'Flipside - nan' \u2192 'flipside - nan'
+[2026-03-31 19:07:03,012] 105 nextflix - INFO - Matched 'The Alaska Wilderness Adventure - 1978' \u2192 'the alaska wilderness adventure - 1978'
+[2026-03-31 19:07:03,344] 105 nextflix - INFO - Matched 'Donovan's Reef - 1963' \u2192 'donovan's reef - 1963'
+[2026-03-31 19:07:03,525] 105 nextflix - INFO - Matched 'An Ultraviolent Colour - 2018' \u2192 'an ultraviolent colour - 2018'
+[2026-03-31 19:07:03,685] 105 nextflix - INFO - Matched 'The Song of Sway Lake - 2018' \u2192 'the song of sway lake - 2018'
+[2026-03-31 19:07:03,812] 105 nextflix - INFO - Matched 'Fangs - 2022' \u2192 'fangs - 2022'
+[2026-03-31 19:07:03,948] 105 nextflix - INFO - Matched 'Manila Boy - 1993' \u2192 'manila boy - 1993'
+[2026-03-31 19:07:04,080] 105 nextflix - INFO - Matched 'The Romance of Annie Laurie - 1920' \u2192 'the romance of annie laurie - 1920'
+[2026-03-31 19:07:04,220] 105 nextflix - INFO - Matched 'The Hammer of God - 1970' \u2192 'the hammer of god - 1970'
+[2026-03-31 19:07:04,339] 105 nextflix - INFO - Matched 'Possession Diaries - 2019' \u2192 'possession diaries - 2019'
+[2026-03-31 19:07:04,515] 105 nextflix - INFO - Matched 'House of Darkness - 2022' \u2192 'house of darkness - 2022'
+[2026-03-31 19:07:04,676] 105 nextflix - INFO - Matched 'Private Valentine: Blonde & Dangerous - 2008' \u2192 'private valentine: blonde & dangerous - 2008'
+[2026-03-31 19:07:04,812] 105 nextflix - INFO - Matched 'Sexton Blake and the Hooded Terror - 1938' \u2192 'sexton blake and the hooded terror - 1938'
+[2026-03-31 19:07:04,946] 105 nextflix - INFO - Matched 'My Dead Ones - 2018' \u2192 'my dead ones - 2018'
+[2026-03-31 19:07:05,080] 105 nextflix - INFO - Matched 'Trump vs the Illuminati - 2020' \u2192 'trump vs the illuminati - 2020'
+[2026-03-31 19:07:05,223] 105 nextflix - INFO - Matched 'Yoru o koeru tabi - 2021' \u2192 'yoru o koeru tabi - 2021'
+[2026-03-31 19:07:05,358] 105 nextflix - INFO - Matched 'Purgatory - VIII' \u2192 'purgatory - viii'
+[2026-03-31 19:07:05,507] 105 nextflix - INFO - Matched 'Karadedeler Olayi - 2011' \u2192 'karadedeler olayi - 2011'
+[2026-03-31 19:07:05,672] 275 nextflix - INFO - Mean ILS (lower=more diverse) : 0.2123
+[2026-03-31 19:07:05,672] 276 nextflix - INFO - Catalogue coverage            : 0.2%
+[2026-03-31 19:07:06,130] 15 nextflix - INFO - Object saved \u2192 artifacts\recommender_model.pkl
+[2026-03-31 19:07:06,130] 280 nextflix - INFO - Model saved \u2192 artifacts\recommender_model.pkl
+[2026-03-31 19:07:06,918] 292 nextflix - INFO - ModelTrainer: complete
+[2026-03-31 19:07:06,918] 43 nextflix - INFO - TRAIN PIPELINE: COMPLETE

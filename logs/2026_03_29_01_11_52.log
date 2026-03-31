@@ -1,9 +1,0 @@
-[2026-03-29 01:11:52,901] 29 cinematch - INFO - PredictPipeline: loading model from artifacts/
-[2026-03-29 01:11:54,745] 27 cinematch - INFO - Object loaded \u2190 artifacts\recommender_model.pkl
-[2026-03-29 01:11:54,745] 31 cinematch - INFO - PredictPipeline: model loaded successfully
-[2026-03-29 01:15:38,425] 45 cinematch - INFO - Predict: by_title | 'Batman - 1943' | genre=None | n=5
-[2026-03-29 01:15:38,510] 105 cinematch - INFO - Matched 'Batman - 1943' \u2192 'batman - 1943'
-[2026-03-29 01:15:58,828] 45 cinematch - INFO - Predict: by_title | 'Batman - 1943' | genre=None | n=6
-[2026-03-29 01:15:58,829] 105 cinematch - INFO - Matched 'Batman - 1943' \u2192 'batman - 1943'
-[2026-03-29 01:16:30,847] 49 cinematch - INFO - Predict: by_description | genre=None | n=5
-[2026-03-29 01:17:14,059] 53 cinematch - INFO - Predict: by_genre | 'Mystery' | n=5

@@ -13,4 +13,4 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
-logger = logging.getLogger("cinematch")
+logger = logging.getLogger("nextflix")
